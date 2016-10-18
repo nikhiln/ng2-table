@@ -12,7 +12,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
               (sortChanged)="onChangeTable($event)" ngClass="{{column.className || ''}}">
             {{column.title}}
             <i *ngIf="config && column.sort" class="pull-right mdi"
-              [ngClass]="{'mdi-chevron-down': column.sort === 'desc', 'mdi-chevron-up': column.sort === 'asc'}"></i>
+              [ngClass]="{column.iconDownClassName: column.sort === 'desc', column.iconUpClassName: column.sort === 'asc'}"></i>
           </th>
         </tr>
       </thead>
